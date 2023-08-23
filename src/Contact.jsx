@@ -3,23 +3,22 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 
 
-const Contact = () => {
-    const input=document.querySelector('input')
-    const handleSubmit=() => {
-        if (input.value === "") {
-            console.log("enter values");
-        };
-              
-            }
+function Contact(){
+    function handleSubmit(e) {
+        e.preventDefault()
+    }
   return (
     <div className='d-flex justify-content-center align-items-center vh-100 fresh-air'>
         <div className='w-50 bg-white border rounded p-3'>
             <form action="/" onSubmit={handleSubmit}>
                 <label for="name"><strong>NAME</strong> </label><br/>
-                <input type="text" className='form-control' placeholder='name' onSubmit={handleSubmit}/><br/>      
+                <input type="text" pattern="[a-z,A-Z]" className='form-control' placeholder='name' /><br/>      
                 <label for="email"><strong>Email</strong> </label><br/>     
-                <input type="email" className='form-control' placeholder='email'onSubmit={handleSubmit}/><br/> 
-                <center><Link to='/Home' className='btn btn-success w-25'>Home</Link></center>                              
+                <input type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" className='form-control' placeholder='email'/><br/> 
+                <center>
+                    
+                    <Link to='/Home' type='submit' className='btn btn-success w-25'>Home</Link>
+                    </center>                              
             </form>
         </div>
     </div>

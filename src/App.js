@@ -8,13 +8,11 @@ import Contact from './Contact';
 
 function App() {
   return (
-    <div >
-      
+    <div >   
       <BrowserRouter>
         <Routes>          
-        <Route path="/" element={<Contact/>} ></Route>
-          <Route path="/Home" element={<Home/>} ></Route>
-          
+          <Route path="/" element={<Contact/>} ></Route>
+          <Route path="/Home" element={<Home/>} ></Route>      
         </Routes>
       </BrowserRouter>
       
